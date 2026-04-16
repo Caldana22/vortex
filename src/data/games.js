@@ -1,20 +1,19 @@
-import EldenRing from "../assets/EldenRing.jpg";
-import ghost from "../assets/ghost.jpg";
-import god from "../assets/god.jpg";
-import gta from "../assets/gta.jpg";
-import pvz from "../assets/pvz.jpg";
-import red from "../assets/red.jpg";
-import resident from "../assets/resident.jpg";
-import sekiro from "../assets/sekiro.jpg";
+import league from "../assets/league.jpg";
+import valorant from "../assets/valorant.jpg";
+import minecraft from "../assets/minecraft.jpg";
+import cs from "../assets/cs2.jpg";
+import cyberpunk from "../assets/cyberpunk.png";
+import elden from "../assets/elden.jpg";
+import fifa from "../assets/fifa.webp";
+import apex from "../assets/apex.jpg";
 
-export const gameData = [
-    {id: 1, title: "Elden Ring", category: "Souls Like", imagem: EldenRing},
-    {id: 2, title: "Ghost Of Tsushima", category: "Ação e aventura", imagem: ghost},
-    {id: 3, title: "God Of War Ragnarok", category: "Ação e Aventura", imagem: god},
-    {id: 4, title: "GTA 6", category: "Mundo Aberto", imagem: gta},
-    {id: 5, title: "Plants Vs Zombies Garden Warfare 2", category: "Hero Shooter", imagem: pvz},
-    {id: 6, title: "Red Dead Redemption 2", category: "Mundo Aberto", imagem: red},
-    {id: 7, title: "Resident Evil 4", category: "Survival Horror", imagem: resident},
-    {id: 8, title: "Sekiro", category: "Souls Like", imagem: sekiro},
-
+export const gamesData = [
+  { id: 1, title: "League of Legends", category: "MOBA", banner: league },
+  { id: 2, title: "Valorant", category: "FPS", banner: valorant },
+  { id: 3, title: "Minecraft", category: "Survival", banner: minecraft },
+  { id: 4, title: "CS:GO 2", category: "FPS", banner: cs },
+  { id: 5, title: "Cyberpunk 2077", category: "RPG", banner: cyberpunk },
+  { id: 6, title: "Elden Ring", category: "Soulslike", banner: elden },
+  { id: 7, title: "FIFA 24", category: "Esportes", banner: fifa },
+  { id: 8, title: "Apex Legends", category: "Battle Royale", banner: apex },
 ];
