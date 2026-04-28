@@ -10,10 +10,16 @@ import "./App.css";
 function App() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState("dash");
+  const [favorites, setFavorites] = useState([]);
 
   const filteredGames = gamesData
-  .filter(() => activeTab === "dash")
+  .filter((game) => activeTab === "dash" || favorites.includes(game.id))//inclui o id no favorites
   .filter((game) => game.title.toLowerCase().includes(search.toLowerCase()));
+
+  const toggleFavorite = (id) => {
+    setFavorites((prev) => prev.includes(id) ? prev.filter((favId) => favId != id) : [...prev, id]
+    );
+  };
 
   useEffect(() => {
     AOS.init({
@@ -49,6 +55,8 @@ function App() {
                 category={g.category}
                 banner={g.banner}
                 index={index} //coloco o index dentro do card
+                isFavorite = {favorites.includes(g.id)}
+                onFavorite = {() => toggleFavorite(g.id)}
               />
             ))
            ) : (
