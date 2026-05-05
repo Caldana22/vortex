@@ -1,7 +1,7 @@
 import "./GameCard.css";
 import { Play, Heart } from "lucide-react";
 
-export function GameCard({ title, category, banner, index, isFavorite, onFavorite }) { //
+export function GameCard({ title, category, banner, index, isFavorite, onFavorite, onPlay }) { //
   return (
     <div className="vortex-card"
       data-aos="fade-up" //define o efeito
@@ -24,8 +24,8 @@ export function GameCard({ title, category, banner, index, isFavorite, onFavorit
       <div className="card-info">
         <h4>{title}</h4>
         <p>{category}</p>
-        <button className="play-btn">
-          <Play size={14} fill="white" />
+        <button className="play-btn" onClick={onPlay}>
+          <Play size={14} fill="white" /> Jogar
         </button>
       </div>
     </div>
