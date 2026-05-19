@@ -4,8 +4,12 @@ import { Header } from "./components/Header";
 import { gamesData } from "./data/games";
 import { GameCard } from "./components/GameCard";
 import { GameModal } from "./components/GameModal"; //Importa o componente gamemodal
+import Slider from "./components/Slider"; //Tempera o componente slider
 import AOS from 'aos'; //importei o AOS
 import "aos/dist/aos.css"; //Importei o css da biblioteca css
+import { SwiperSlide } from "swiper/react"; //Importa o swiperslide da biblioteca
+import { Autoplay } from "swiper/modules"; //Importa o autoplay para a reprodução automatica
+
 import "./App.css";
 
 function App() {
@@ -33,6 +37,11 @@ function App() {
     })
   },[]);
 
+  //Criar o SliderSettings
+  const sliderSettings = {
+    slidesPerview: 1,
+  };
+
   return (
     <div className="vortex-app">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -40,6 +49,30 @@ function App() {
       <main className="vortex-main">
 
         <Header search = {search} setSearch={setSearch} />
+
+        {/* Cria o container slider */}
+        {activeTab === "dash" && (
+          <div className="container-slider">
+            <Slider settings={sliderSettings}>
+              {gamesData.map((slide) => (
+                <SwiperSlide key={slide.id}>
+                  <div className="slide-content">
+                    <img src={slide.banner} alt={slide.title} />
+                    <div
+                      className="slide-overlay"
+                      style={{
+                        borderBottom: `8px solid ${slide.color}`,
+                      }}
+                    >
+                      <span>{slide.title}</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Slider>
+          </div>
+        )}
+
 
         <div className="vortex-content">
 
